@@ -11,6 +11,7 @@ namespace pom.specflow.Steps
         [Given(@"Planit Website is open")]
         public void GivenPlanitWebsiteIsOpen()
         {
+            tc = base.NewTest();
             TestContext.Out.WriteLine("GIVEN TEST");
         }
         

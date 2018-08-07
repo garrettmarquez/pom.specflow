@@ -18,14 +18,15 @@ namespace pom.specflow.Specflow
         public void SetUp()
         {
             TestContext.Out.WriteLine("BASE");
-            //tc = new TestCase();
-            //wdm = tc.GetWebDriverManager();
+            tc = new TestCase();
+            wdm = tc.GetWebDriverManager();
+            wdm.GetDriver();
         }
         [AfterScenario]
         public void TearDown()
         {
             TestContext.Out.WriteLine("TEARDOWN");
-            //wdm.Close();
+            wdm.Close();
         }
     }
 }
