@@ -7,11 +7,10 @@ namespace pom.specflow.Steps
     [Binding]
     public class SearchSteps : BaseSteps
     {
-        private TestCase tc;
+        //private TestCase tc;
         [Given(@"Planit Website is open")]
         public void GivenPlanitWebsiteIsOpen()
         {
-            tc = base.NewTest();
             TestContext.Out.WriteLine("GIVEN TEST");
         }
         

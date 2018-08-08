@@ -6,13 +6,8 @@ namespace pom.specflow.Specflow
 {
     public class BaseSteps
     {
-        private TestCase tc;
-        private WebDriverManager wdm;
-
-        public TestCase NewTest()
-        {
-            return tc;
-        }
+        public static TestCase tc;
+        public static WebDriverManager wdm;
 
         [BeforeScenario]
         public void SetUp()
