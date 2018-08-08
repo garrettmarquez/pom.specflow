@@ -1,16 +1,11 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
-using pom.specflow.Specflow;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace pom.specflow.Pages
 {
-    public abstract class BasePage
+    public class BasePage
     {
         //wait for element existence
         public static bool WaitUntilElementExists(IWebDriver driver, By elementLocator, int timeout = 10)

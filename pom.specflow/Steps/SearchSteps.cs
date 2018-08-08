@@ -8,12 +8,13 @@ namespace pom.specflow.Steps
     [Binding]
     public class SearchSteps : BaseSteps
     {
-        //private TestCase tc;
+        private Home homepage;
         [Given(@"Planit Website is open")]
         public void GivenPlanitWebsiteIsOpen()
         {
-            TestContext.Out.WriteLine("GIVEN TEST");
-            Home homepage = new Home(driver);
+            homepage = new Home(driver);
+            homepage.LoadHomePage();
+            homepage.ClickLogin();
         }
         
         [When(@"I search for something")]
