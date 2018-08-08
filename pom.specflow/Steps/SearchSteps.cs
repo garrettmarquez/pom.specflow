@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using pom.specflow.Pages;
 using pom.specflow.Specflow;
 using TechTalk.SpecFlow;
 
@@ -12,6 +13,7 @@ namespace pom.specflow.Steps
         public void GivenPlanitWebsiteIsOpen()
         {
             TestContext.Out.WriteLine("GIVEN TEST");
+            Home homepage = new Home(driver);
         }
         
         [When(@"I search for something")]
