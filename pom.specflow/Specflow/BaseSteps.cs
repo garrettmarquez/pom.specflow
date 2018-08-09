@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Globalization;
 using System.IO;
+using AventStack.ExtentReports;
+using AventStack.ExtentReports.Reporter;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
@@ -11,10 +14,15 @@ namespace pom.specflow.Specflow
     public class BaseSteps
     {
         public static IWebDriver driver;
-
+        public static ExtentReports extent;
         [BeforeScenario]
         public void SetUp()
         {
+            string reportPath = $"C:\\Automation\\Results\\Report\\{DateTime.Now.ToString("yyyyMMddHHmmss")}.html";
+            var htmlReporter = new ExtentHtmlReporter(reportPath);
+            extent = new ExtentReports();
+            extent.AttachReporter(htmlReporter);
+            extent.CreateTest("Extent Test", "Test Description");
             //dynamic driver folder path
             string driver_path = $@"{Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\"))}\Drivers\";
             //use default browser
@@ -47,6 +55,7 @@ namespace pom.specflow.Specflow
         {
             driver.Close();
             driver.Quit();
+            extent.Flush();
         }
         //default chrome options
         private ChromeOptions GetChromeDefaultOptions()

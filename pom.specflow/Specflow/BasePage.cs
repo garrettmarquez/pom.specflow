@@ -29,5 +29,14 @@ namespace pom.specflow.Pages
             actions.MoveToElement(driver.FindElement(elementLocator));
             actions.Perform();
         }
+        public static bool VerifyBrowserTitle(IWebDriver driver, string expectedValue)
+        {
+            string actualvalue = driver.Title;
+            if (!actualvalue.Equals(expectedValue))
+            {
+                return false;
+            }
+            else { return true; }
+        }
     }
 }
