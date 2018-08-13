@@ -1,12 +1,13 @@
 ﻿using System;
-using System.Globalization;
 using System.IO;
 using AventStack.ExtentReports;
+using AventStack.ExtentReports.Gherkin.Model;
 using AventStack.ExtentReports.Reporter;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
+using pom.specflow.Pages;
 using TechTalk.SpecFlow;
 
 namespace pom.specflow.Specflow
@@ -15,6 +16,7 @@ namespace pom.specflow.Specflow
     {
         public static IWebDriver driver;
         public static ExtentReports extent;
+        public static ExtentTest feature, scenario;
         [BeforeScenario]
         public void SetUp()
         {
@@ -22,9 +24,12 @@ namespace pom.specflow.Specflow
             var htmlReporter = new ExtentHtmlReporter(reportPath);
             extent = new ExtentReports();
             extent.AttachReporter(htmlReporter);
-            extent.CreateTest("Extent Test", "Test Description");
+            feature = extent.CreateTest<Feature>(ScenarioContext.Current.ScenarioInfo.Title);
+            scenario = feature.CreateNode<Scenario>("test description");
+            //extent.CreateTest(ScenarioContext.Current.ScenarioInfo.Title, "Description");
+
             //dynamic driver folder path
-            string driver_path = $@"{Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\"))}\Drivers\";
+            string driver_path = $@"{Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\"))}Drivers\";
             //use default browser
             switch (TestContext.Parameters.Get("Browser", GetDefaultBrowser()).ToLower())
             {
@@ -62,7 +67,7 @@ namespace pom.specflow.Specflow
         {
             ChromeOptions options = new ChromeOptions();
             options.AddArguments("test-type");
-            options.AddArguments("--disable-popup-blocking");
+            options.AddArguments("--disable-popup-blocking");   
             options.AddArguments("--ignore-certificate-errors");
             options.AddArguments("--ignoreProtectedModeSettings");
             return options;
