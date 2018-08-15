@@ -18,7 +18,7 @@ namespace pom.specflow.Specflow
         public static ExtentReports extent;
         public static ExtentTest feature, scenario;
         [BeforeScenario]
-        public void SetUp()
+        public void BeforeScenario()
         {
             string reportPath = $"C:\\Automation\\Results\\Report\\{DateTime.Now.ToString("yyyyMMddHHmmss")}.html";
             var htmlReporter = new ExtentHtmlReporter(reportPath);
@@ -26,9 +26,6 @@ namespace pom.specflow.Specflow
             extent.AttachReporter(htmlReporter);
             feature = extent.CreateTest<Feature>(ScenarioContext.Current.ScenarioInfo.Title);
             scenario = feature.CreateNode<Scenario>("test description");
-            //extent.CreateTest(ScenarioContext.Current.ScenarioInfo.Title, "Description");
-
-            //dynamic driver folder path
             string driver_path = $@"{Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\"))}Drivers\";
             //use default browser
             switch (TestContext.Parameters.Get("Browser", GetDefaultBrowser()).ToLower())
@@ -56,7 +53,7 @@ namespace pom.specflow.Specflow
             js.ExecuteScript("document.body.style.zoom = 1.0");
         }
         [AfterScenario]
-        public void TearDown()
+        public void AfterScenario()
         {
             driver.Close();
             driver.Quit();

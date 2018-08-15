@@ -3,7 +3,7 @@ using OpenQA.Selenium;
 
 namespace pom.specflow.Pages
 {
-    class Home : BasePage
+    public class Home : BasePage
     {
         protected readonly IWebDriver driver;
         private By buttonLogin = By.XPath("//a[contains(@href,'signin') and text()='Log in']");
