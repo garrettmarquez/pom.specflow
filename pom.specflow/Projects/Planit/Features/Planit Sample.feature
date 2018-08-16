@@ -1,7 +1,7 @@
 ﻿Feature: Sample
 
 @mytag
-Scenario Outline: Sample
+Scenario Outline: Planit Sample
 	Given I Launch Application <client>
 	Examples: 
 	| client	|

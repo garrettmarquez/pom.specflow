@@ -97,16 +97,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Projects\AucklandTransport\Features\Sample.feature.cs">
+    <Compile Include="Projects\AucklandTransport\Features\Auckland Transport Sample.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Sample.feature</DependentUpon>
+      <DependentUpon>Auckland Transport Sample.feature</DependentUpon>
     </Compile>
     <Compile Include="Projects\AucklandTransport\Pages\Login.cs" />
     <Compile Include="Projects\AucklandTransport\Pages\Home.cs" />
     <Compile Include="Projects\AucklandTransport\Steps\AucklandTransport.cs" />
-    <Compile Include="Projects\Planit\Features\Sample.feature.cs">
-      <DependentUpon>Sample.feature</DependentUpon>
+    <Compile Include="Projects\Planit\Features\Planit Sample.feature.cs">
+      <DependentUpon>Planit Sample.feature</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
@@ -121,17 +121,17 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Projects\AucklandTransport\Features\Sample.feature">
+    <None Include="Projects\AucklandTransport\Features\Auckland Transport Sample.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>Sample.feature.cs</LastGenOutput>
+      <LastGenOutput>Auckland Transport Sample.feature.cs</LastGenOutput>
     </None>
     <None Include="license" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Projects\Planit\Features\Sample.feature">
+    <None Include="Projects\Planit\Features\Planit Sample.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>Sample.feature.cs</LastGenOutput>
+      <LastGenOutput>Planit Sample.feature.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>

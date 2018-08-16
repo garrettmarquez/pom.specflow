@@ -1,7 +1,7 @@
 ﻿Feature: Sample
 
 @mytag
-Scenario Outline: Sample
+Scenario Outline: Auckland Transport Sample
 	Given I Launch Application <client>
 	When I Enter Credentials <email> <password>
 	Examples: 

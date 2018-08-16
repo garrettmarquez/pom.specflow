@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace pom.specflow.Projects.Planit.Features
+namespace pom.specflow.Projects.AucklandTransport.Features
 {
     using TechTalk.SpecFlow;
     
@@ -24,7 +24,7 @@ namespace pom.specflow.Projects.Planit.Features
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "Sample.feature"
+#line 1 "Auckland Transport Sample.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
@@ -64,10 +64,10 @@ namespace pom.specflow.Projects.Planit.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Sample")]
+        [NUnit.Framework.DescriptionAttribute("Auckland Transport Sample")]
         [NUnit.Framework.CategoryAttribute("mytag")]
-        [NUnit.Framework.TestCaseAttribute("planit", null)]
-        public virtual void Sample(string client, string[] exampleTags)
+        [NUnit.Framework.TestCaseAttribute("aucklandtransport", "email@domain.com", "pass4321", null)]
+        public virtual void AucklandTransportSample(string client, string email, string password, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "mytag"};
@@ -75,11 +75,13 @@ namespace pom.specflow.Projects.Planit.Features
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Sample", @__tags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Auckland Transport Sample", @__tags);
 #line 4
 this.ScenarioSetup(scenarioInfo);
 #line 5
  testRunner.Given(string.Format("I Launch Application {0}", client), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 6
+ testRunner.When(string.Format("I Enter Credentials {0} {1}", email, password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             this.ScenarioCleanup();
         }
