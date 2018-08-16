@@ -17,10 +17,16 @@ namespace pom.specflow.Specflow
         public static IWebDriver driver;
         public static ExtentReports extent;
         public static ExtentTest feature, scenario;
+        public static string featuretitle;
         [BeforeTestRun]
         public static void BeforeTestRun()
         {
-            string reportPath = $"C:\\Automation\\Results\\Report\\{DateTime.Now.ToString("yyyyMMddHHmmss")}.html";
+            string reportDirectory = $"C:\\Automation\\Results\\Report\\";
+            if (!Directory.Exists(reportDirectory))
+            {
+                Directory.CreateDirectory(reportDirectory);
+            }
+            string reportPath = $"{reportDirectory}{DateTime.Now.ToString("yyyyMMddHHmmss")}.html";
             var htmlReporter = new ExtentHtmlReporter(reportPath);
             extent = new ExtentReports();
             extent.AttachReporter(htmlReporter);
@@ -28,8 +34,6 @@ namespace pom.specflow.Specflow
         [BeforeScenario]
         public void BeforeScenario()
         {
-            feature = extent.CreateTest<Feature>(ScenarioContext.Current.ScenarioInfo.Title);
-            scenario = feature.CreateNode<Scenario>("test description");
             string driver_path = $@"{Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\"))}Drivers\";
             //use default browser
             switch (TestContext.Parameters.Get("Browser", GetDefaultBrowser()).ToLower())
