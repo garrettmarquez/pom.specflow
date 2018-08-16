@@ -7,23 +7,27 @@ using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
-using pom.specflow.Pages;
 using TechTalk.SpecFlow;
 
 namespace pom.specflow.Specflow
 {
-    public class BaseSteps
+    [Binding]
+    public sealed class Hooks
     {
         public static IWebDriver driver;
         public static ExtentReports extent;
         public static ExtentTest feature, scenario;
-        [BeforeScenario]
-        public void BeforeScenario()
+        [BeforeTestRun]
+        public static void BeforeTestRun()
         {
             string reportPath = $"C:\\Automation\\Results\\Report\\{DateTime.Now.ToString("yyyyMMddHHmmss")}.html";
             var htmlReporter = new ExtentHtmlReporter(reportPath);
             extent = new ExtentReports();
             extent.AttachReporter(htmlReporter);
+        }
+        [BeforeScenario]
+        public void BeforeScenario()
+        {
             feature = extent.CreateTest<Feature>(ScenarioContext.Current.ScenarioInfo.Title);
             scenario = feature.CreateNode<Scenario>("test description");
             string driver_path = $@"{Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\"))}Drivers\";
@@ -64,7 +68,7 @@ namespace pom.specflow.Specflow
         {
             ChromeOptions options = new ChromeOptions();
             options.AddArguments("test-type");
-            options.AddArguments("--disable-popup-blocking");   
+            options.AddArguments("--disable-popup-blocking");
             options.AddArguments("--ignore-certificate-errors");
             options.AddArguments("--ignoreProtectedModeSettings");
             return options;

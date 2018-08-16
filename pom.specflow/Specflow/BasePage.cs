@@ -3,7 +3,7 @@ using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 using System;
 
-namespace pom.specflow.Pages
+namespace pom.specflow.Specflow
 {
     public class BasePage
     {
@@ -32,7 +32,7 @@ namespace pom.specflow.Pages
         public static bool VerifyBrowserTitle(IWebDriver driver, string expectedValue)
         {
             string actualvalue = driver.Title;
-            if (!actualvalue.Equals(expectedValue))
+            if ((!actualvalue.Equals(expectedValue)) && (!actualvalue.Contains(expectedValue)))
             {
                 return false;
             }

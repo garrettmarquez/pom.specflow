@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace pom.specflow.Features
+namespace pom.specflow.Projects.AucklandTransport.Features
 {
     using TechTalk.SpecFlow;
     
@@ -66,16 +66,22 @@ namespace pom.specflow.Features
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Sample")]
         [NUnit.Framework.CategoryAttribute("mytag")]
-        public virtual void Sample()
+        [NUnit.Framework.TestCaseAttribute("aucklandtransport", "email@domain.com", "pass4321", null)]
+        public virtual void Sample(string client, string email, string password, string[] exampleTags)
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Sample", new string[] {
-                        "mytag"});
+            string[] @__tags = new string[] {
+                    "mytag"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Sample", @__tags);
 #line 4
 this.ScenarioSetup(scenarioInfo);
 #line 5
- testRunner.Given("I Launch Application", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given(string.Format("I Launch Application {0}", client), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 6
- testRunner.When("I Click Login", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When(string.Format("I Enter Credentials {0} {1}", email, password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             this.ScenarioCleanup();
         }
