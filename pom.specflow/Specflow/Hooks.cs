@@ -1,7 +1,6 @@
 ﻿using System;
 using System.IO;
 using AventStack.ExtentReports;
-using AventStack.ExtentReports.Gherkin.Model;
 using AventStack.ExtentReports.Reporter;
 using NUnit.Framework;
 using OpenQA.Selenium;
@@ -17,24 +16,26 @@ namespace pom.specflow.Specflow
         public static IWebDriver driver;
         public static ExtentReports extent;
         public static ExtentTest feature, scenario;
-        public static string featuretitle;
+        public static string projectdirectory;
         [BeforeTestRun]
         public static void BeforeTestRun()
         {
-            string reportDirectory = $"C:\\Automation\\Results\\Report\\";
+            projectdirectory = $@"{Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\"))}";
+            string reportDirectory = @"C:\Automation\Results\Report\";
             if (!Directory.Exists(reportDirectory))
             {
                 Directory.CreateDirectory(reportDirectory);
             }
             string reportPath = $"{reportDirectory}{DateTime.Now.ToString("yyyyMMddHHmmss")}.html";
             var htmlReporter = new ExtentHtmlReporter(reportPath);
+            htmlReporter.LoadConfig($"{projectdirectory}extent-config.xml");
             extent = new ExtentReports();
             extent.AttachReporter(htmlReporter);
         }
         [BeforeScenario]
         public void BeforeScenario()
         {
-            string driver_path = $@"{Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\"))}Drivers\";
+            string driver_path = $@"{projectdirectory}Drivers\";
             //use default browser
             switch (TestContext.Parameters.Get("Browser", GetDefaultBrowser()).ToLower())
             {
