@@ -1,6 +1,7 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
+using pom.specflow.Customization.Exceptions;
 using System;
 
 namespace pom.specflow.Specflow
@@ -17,7 +18,7 @@ namespace pom.specflow.Specflow
                 FocusElement(driver, elementLocator); //set focus to element
                 return true;
             }
-            catch (Exception) //catch all exception types and dispose the driver
+            catch (Exception)
             {
                 return false;
             }
@@ -34,9 +35,18 @@ namespace pom.specflow.Specflow
             string actualvalue = driver.Title;
             if ((!actualvalue.Equals(expectedValue)) && (!actualvalue.Contains(expectedValue)))
             {
-                return false;
+                throw new Exception($"Expected title \"{expectedValue}\" didn't matched the actual title \"{actualvalue}\" displayed");
             }
             else { return true; }
+        }
+        public static void ClickElement(IWebDriver driver, By elementLocator)
+        {
+            if(!WaitUntilElementExists(driver, elementLocator))
+            {
+                throw new Exception($"\"ClickElement\" method.\nUnable to find element using \"{elementLocator}\" locator.");
+            }
+            FocusElement(driver, elementLocator);
+            driver.FindElement(elementLocator).Click();
         }
     }
 }

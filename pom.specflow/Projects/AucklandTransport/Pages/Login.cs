@@ -30,8 +30,7 @@ namespace pom.specflow.Projects.AucklandTransport.Pages
             driver.FindElement(txt_Password).SendKeys(s);
         }
         public void ClickLogin() {
-            Assert.That(WaitUntilElementExists(driver, btn_Login), Is.True);
-            driver.FindElement(btn_Login).Click();
+            ClickElement(driver, btn_Login);
         }
     }
 }

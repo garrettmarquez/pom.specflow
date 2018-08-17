@@ -18,8 +18,8 @@ namespace pom.specflow.Projects.AucklandTransport.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.3.2.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("Sample")]
-    public partial class SampleFeature
+    [NUnit.Framework.DescriptionAttribute("Auckland Transport Sample Feature")]
+    public partial class AucklandTransportSampleFeatureFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
@@ -31,7 +31,7 @@ namespace pom.specflow.Projects.AucklandTransport.Features
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Sample", null, ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Auckland Transport Sample Feature", null, ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -64,10 +64,10 @@ namespace pom.specflow.Projects.AucklandTransport.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Auckland Transport Sample")]
+        [NUnit.Framework.DescriptionAttribute("This is just a sample feature file for Auckland Transport website")]
         [NUnit.Framework.CategoryAttribute("mytag")]
         [NUnit.Framework.TestCaseAttribute("aucklandtransport", "email@domain.com", "pass4321", null)]
-        public virtual void AucklandTransportSample(string client, string email, string password, string[] exampleTags)
+        public virtual void ThisIsJustASampleFeatureFileForAucklandTransportWebsite(string client, string email, string password, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "mytag"};
@@ -75,7 +75,7 @@ namespace pom.specflow.Projects.AucklandTransport.Features
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Auckland Transport Sample", @__tags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("This is just a sample feature file for Auckland Transport website", @__tags);
 #line 4
 this.ScenarioSetup(scenarioInfo);
 #line 5

@@ -18,8 +18,8 @@ namespace pom.specflow.Projects.Planit.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.3.2.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("Sample")]
-    public partial class SampleFeature
+    [NUnit.Framework.DescriptionAttribute("Planit Testing Sample Feature")]
+    public partial class PlanitTestingSampleFeatureFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
@@ -31,7 +31,7 @@ namespace pom.specflow.Projects.Planit.Features
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Sample", null, ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Planit Testing Sample Feature", null, ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -64,10 +64,10 @@ namespace pom.specflow.Projects.Planit.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Planit Sample")]
+        [NUnit.Framework.DescriptionAttribute("This is just a sample feature file for Planit Testing website")]
         [NUnit.Framework.CategoryAttribute("mytag")]
         [NUnit.Framework.TestCaseAttribute("planit", null)]
-        public virtual void PlanitSample(string client, string[] exampleTags)
+        public virtual void ThisIsJustASampleFeatureFileForPlanitTestingWebsite(string client, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "mytag"};
@@ -75,7 +75,7 @@ namespace pom.specflow.Projects.Planit.Features
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Planit Sample", @__tags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("This is just a sample feature file for Planit Testing website", @__tags);
 #line 4
 this.ScenarioSetup(scenarioInfo);
 #line 5

@@ -1,7 +1,7 @@
-﻿Feature: Sample
+﻿Feature: Auckland Transport Sample Feature
 
 @mytag
-Scenario Outline: Auckland Transport Sample
+Scenario Outline: This is just a sample feature file for Auckland Transport website
 	Given I Launch Application <client>
 	When I Enter Credentials <email> <password>
 	Examples: 

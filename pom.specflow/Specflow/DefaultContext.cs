@@ -8,6 +8,8 @@ namespace pom.specflow.Specflow
     {
         public IWebDriver driver;
         public string client;
+
+        //application pool
         public AucklandTransport aucklandtransport;
         public Planit planit;
     }
