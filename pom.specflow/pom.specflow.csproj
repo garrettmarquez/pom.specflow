@@ -97,7 +97,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Customization\Exceptions\CustomException.cs" />
     <Compile Include="Projects\AucklandTransport\Features\Auckland Transport Sample.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -115,7 +114,6 @@
     <Compile Include="Projects\Planit\Steps\Planit.cs" />
     <Compile Include="Specflow\BasePage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Specflow\DriverManager.cs" />
     <Compile Include="Specflow\Hooks.cs" />
     <Compile Include="Projects\AucklandTransport\Steps\Login_Steps.cs" />
     <Compile Include="Specflow\LaunchApplication.cs" />

@@ -28,6 +28,7 @@ namespace pom.specflow.Projects.AucklandTransport.Steps
                 defaultcontext.aucklandtransport.loginpage.LoadPage();
                 defaultcontext.aucklandtransport.loginpage.EnterUserName(email);
                 defaultcontext.aucklandtransport.loginpage.EnterPassword(password);
+                Hooks.scenario.CreateNode<When>(scenariocontext.StepContext.StepInfo.Text).Pass($"Email: {email} and Password: {password} entered.");
             } catch (Exception e)
             {
                 Hooks.scenario.CreateNode<When>(scenariocontext.StepContext.StepInfo.Text).Fail($"Failed to enter credentials due to error encountered in {e.Message}");

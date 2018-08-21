@@ -1,7 +1,6 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
-using pom.specflow.Customization.Exceptions;
 using System;
 
 namespace pom.specflow.Specflow

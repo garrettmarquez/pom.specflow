@@ -46,7 +46,7 @@ namespace pom.specflow.Specflow
                         reportclient = "Planit";
                         break;
                     default:
-                        throw new Customization.Exceptions.CustomException($"\"{client}\" is not yet supported");
+                        throw new Exception($"\"{client}\" is not yet supported");
                 }
                 Hooks.scenario.CreateNode<Given>(scenariocontext.StepContext.StepInfo.Text).Pass($"Successfully launched {reportclient} website.");
             } catch (ArgumentOutOfRangeException e) {
