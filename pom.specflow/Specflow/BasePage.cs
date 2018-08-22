@@ -2,13 +2,17 @@
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 using System;
+using System.Runtime.CompilerServices;
 
 namespace pom.specflow.Specflow
 {
     public class BasePage
     {
         //wait for element existence
-        public static bool WaitUntilElementExists(IWebDriver driver, By elementLocator, int timeout = 10)
+        public static bool WaitUntilElementExists(IWebDriver driver,
+            By elementLocator,
+            int timeout = 10,
+            [CallerMemberName] string methodName="")
         {
             try
             {
@@ -19,7 +23,8 @@ namespace pom.specflow.Specflow
             }
             catch (Exception)
             {
-                return false;
+                throw new Exception($"Error occurred in \"{methodName}\" method." +
+                    $"\nUnable to find element using \"{elementLocator}\" locator.");
             }
         }
         //set focus to element
@@ -40,12 +45,15 @@ namespace pom.specflow.Specflow
         }
         public static void ClickElement(IWebDriver driver, By elementLocator)
         {
-            if(!WaitUntilElementExists(driver, elementLocator))
-            {
-                throw new Exception($"\"ClickElement\" method.\nUnable to find element using \"{elementLocator}\" locator.");
-            }
+            WaitUntilElementExists(driver, elementLocator);
             FocusElement(driver, elementLocator);
             driver.FindElement(elementLocator).Click();
+        }
+        public static void EnterText(IWebDriver driver, By elementLocator, string s)
+        {
+            WaitUntilElementExists(driver, elementLocator);
+            FocusElement(driver, elementLocator);
+            driver.FindElement(elementLocator).SendKeys(s);
         }
     }
 }
