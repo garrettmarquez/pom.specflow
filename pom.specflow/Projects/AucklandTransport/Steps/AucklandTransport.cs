@@ -1,6 +1,4 @@
-﻿using OpenQA.Selenium;
-
-namespace pom.specflow.Projects.AucklandTransport.Steps
+﻿namespace pom.specflow.Projects.AucklandTransport.Steps
 {
     public class AucklandTransport
     {

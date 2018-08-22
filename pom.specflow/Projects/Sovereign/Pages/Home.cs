@@ -2,7 +2,7 @@
 
 namespace pom.specflow.Projects.Sovereign.Pages
 {
-    class Home : Specflow.BasePage
+    public class Home : Specflow.BasePage
     {
         protected readonly IWebDriver driver;
         public Home(IWebDriver wd) => this.driver = wd;

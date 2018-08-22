@@ -112,6 +112,8 @@
     </Compile>
     <Compile Include="Projects\Planit\Pages\Home.cs" />
     <Compile Include="Projects\Planit\Steps\Planit.cs" />
+    <Compile Include="Projects\Sovereign\Pages\Home.cs" />
+    <Compile Include="Projects\Sovereign\Steps\Sovereign.cs" />
     <Compile Include="Specflow\BasePage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Specflow\Hooks.cs" />
@@ -136,6 +138,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Drivers\" />
+    <Folder Include="Projects\Integration\" />
+    <Folder Include="Projects\Sovereign\Features\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="extent-config.xml" />

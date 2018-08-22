@@ -31,7 +31,7 @@ namespace pom.specflow.Projects.AucklandTransport.Steps
                 Hooks.scenario.CreateNode<When>(scenariocontext.StepContext.StepInfo.Text).Pass($"Email: {email} and Password: {password} entered.");
             } catch (Exception e)
             {
-                Hooks.scenario.CreateNode<When>(scenariocontext.StepContext.StepInfo.Text).Fail($"Failed to enter credentials.\n{e.Message}");
+                Hooks.scenario.CreateNode<When>(scenariocontext.StepContext.StepInfo.Text).Fail($"Failed to enter credentials:\n{e.Message}");
             }
         }
     }

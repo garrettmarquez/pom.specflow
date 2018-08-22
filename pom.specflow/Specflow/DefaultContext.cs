@@ -1,6 +1,7 @@
 ﻿using OpenQA.Selenium;
 using pom.specflow.Projects.AucklandTransport.Steps;
 using pom.specflow.Projects.Planit.Steps;
+using pom.specflow.Projects.Sovereign.Steps;
 
 namespace pom.specflow.Specflow
 {
