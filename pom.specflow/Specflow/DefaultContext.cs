@@ -12,5 +12,6 @@ namespace pom.specflow.Specflow
         //application pool
         public AucklandTransport aucklandtransport;
         public Planit planit;
+        public Sovereign sovereign;
     }
 }
