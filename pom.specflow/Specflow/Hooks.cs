@@ -17,6 +17,7 @@ namespace pom.specflow.Specflow
         public static ExtentReports extent;
         public static ExtentTest feature, scenario;
         public static string projectdirectory;
+        public static int step;
         [BeforeTestRun]
         public static void BeforeTestRun()
         {
