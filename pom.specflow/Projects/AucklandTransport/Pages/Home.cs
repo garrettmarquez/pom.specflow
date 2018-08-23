@@ -6,7 +6,7 @@ namespace pom.specflow.Projects.AucklandTransport.Pages
     {
         protected readonly IWebDriver driver;
 
-        private By btn_Login = By.XPath("//a[contains(@href,'signin') and text()='Log in']");
+        private By btn_Login = By.XPath("//a[contains(@href,'signin') and text()='Login']");
 
         public Home(IWebDriver wd) => this.driver = wd;
 
