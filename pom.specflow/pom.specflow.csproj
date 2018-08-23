@@ -112,6 +112,11 @@
     </Compile>
     <Compile Include="Projects\Planit\Pages\Home.cs" />
     <Compile Include="Projects\Planit\Steps\Planit.cs" />
+    <Compile Include="Projects\Sovereign\Features\Sovereign Sample.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Sovereign Sample.feature</DependentUpon>
+    </Compile>
     <Compile Include="Projects\Sovereign\Pages\Home.cs" />
     <Compile Include="Projects\Sovereign\Steps\Sovereign.cs" />
     <Compile Include="Specflow\BasePage.cs" />
@@ -135,11 +140,14 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Planit Sample.feature.cs</LastGenOutput>
     </None>
+    <None Include="Projects\Sovereign\Features\Sovereign Sample.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Sovereign Sample.feature.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Drivers\" />
     <Folder Include="Projects\Integration\" />
-    <Folder Include="Projects\Sovereign\Features\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="extent-config.xml" />

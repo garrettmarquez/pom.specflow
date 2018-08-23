@@ -45,8 +45,16 @@ namespace pom.specflow.Specflow
                         defaultcontext.planit.homepage.LoadPage();
                         reportclient = "Planit";
                         break;
+                    case "sovereign":
+                        defaultcontext.sovereign = new Projects.Sovereign.Steps.Sovereign
+                        {
+                            homepage = new Projects.Sovereign.Pages.Home(defaultcontext.driver)
+                        };
+                        defaultcontext.sovereign.homepage.LoadPage();
+                        reportclient = "Sovereign";
+                        break;
                     default:
-                        throw new Exception($"\"{client}\" is not yet supported");
+                        throw new Exception($"\"{client}\" client is not yet supported");
                 }
                 Hooks.scenario.CreateNode<Given>(scenariocontext.StepContext.StepInfo.Text).Pass($"Successfully launched {reportclient} website.");
             } catch (ArgumentOutOfRangeException e) {
