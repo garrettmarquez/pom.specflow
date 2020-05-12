@@ -9,7 +9,7 @@ namespace pom.specflow.Projects.Sovereign.Pages
         public void LoadPage()
         {
             driver.Navigate().GoToUrl("https://www.sovereign.co.nz/");
-            VerifyBrowserTitle(driver, "Sovereign");
+            VerifyBrowserTitle(driver, "AIA - NZ's Largest Life Insurer | Life & Health Insurance");
         }
     }
 }
