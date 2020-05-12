@@ -37,6 +37,14 @@ namespace pom.specflow.Specflow
                         defaultcontext.aucklandtransport.homepage.LoadPage();
                         reportclient = "Auckland Transport";
                         break;
+                    case "iag":
+                        defaultcontext.iag = new Projects.IAG.Steps.IAG
+                        {
+                            homepage = new Projects.IAG.Pages.Home(defaultcontext.driver)
+                        };
+                        defaultcontext.iag.homepage.LoadPage();
+                        reportclient = "Home";
+                        break;
                     case "planit":
                         defaultcontext.planit = new Projects.Planit.Steps.Planit
                         {

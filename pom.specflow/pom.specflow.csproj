@@ -105,6 +105,15 @@
     <Compile Include="Projects\AucklandTransport\Pages\Login.cs" />
     <Compile Include="Projects\AucklandTransport\Pages\Home.cs" />
     <Compile Include="Projects\AucklandTransport\Steps\AucklandTransport.cs" />
+    <Compile Include="Projects\IAG\Features\IAG Sample.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IAG Sample.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Projects\IAG\Pages\Home.cs" />
+    <Compile Include="Projects\IAG\Pages\Menu.cs" />
+    <Compile Include="Projects\IAG\Steps\IAG.cs" />
+    <Compile Include="Projects\IAG\Steps\Menu_Steps.cs" />
     <Compile Include="Projects\Planit\Features\Planit Sample.feature.cs">
       <DependentUpon>Planit Sample.feature</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -135,6 +144,10 @@
     <None Include="license" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
+    </None>
+    <None Include="Projects\IAG\Features\IAG Sample.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>IAG Sample.feature.cs</LastGenOutput>
     </None>
     <None Include="Projects\Planit\Features\Planit Sample.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
